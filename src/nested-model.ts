@@ -1,3 +1,5 @@
+
+
 import {EventEmitter} from 'eventsjs/lib/events'
 import {IModel,ICollection} from './interfaces'
 import {uniqueId, equal} from 'utilities'
