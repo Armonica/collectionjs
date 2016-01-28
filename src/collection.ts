@@ -2,9 +2,9 @@
 import {BaseObject} from './object'
 import {IModel,ICollection, Silenceable} from './interfaces'
 import {Model} from './model'
-import {extend} from 'utilities/lib/objects'
-import {sortBy, find, slice} from 'utilities/lib/arrays'
-import {callFunc} from 'utilities/lib/utils'
+import {extend} from 'utilities'
+import {sortBy, find, slice} from 'utilities'
+import {callFunc} from 'utilities'
 
 var setOptions = {add: true, remove: true, merge: true};
 var addOptions = {add: true, remove: false};

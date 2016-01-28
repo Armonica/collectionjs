@@ -1,4 +1,5 @@
-import {IEventEmitter} from 'eventsjs'
+
+import {IEventEmitter} from 'eventsjs/lib/events';
 
 export interface IModelOptions {
     collection?: ICollection

@@ -2,4 +2,4 @@
 
 const gulp = require('gulp');
 
-gulp.task('default', ['build', 'build:bundle']);
+gulp.task('default', ['build', 'pack']);

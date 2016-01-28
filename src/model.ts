@@ -1,8 +1,8 @@
 
 import {BaseObject} from './object'
 import {IModel, ICollection} from './interfaces'
-import {uniqueId, equal} from 'utilities/lib/utils'
-import {has, extend} from 'utilities/lib/objects'
+import {uniqueId, equal} from 'utilities'
+import {has, extend} from 'utilities'
 
 
 export interface ModelOptions {

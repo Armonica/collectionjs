@@ -1,5 +1,7 @@
-import {EventEmitter} from 'eventsjs'
-import {inherits} from 'utilities/lib/utils'
+/// <reference path="../node_modules/utilities/utilities.d.ts" />
+
+import {EventEmitter} from 'eventsjs/lib/events';
+import {inherits} from 'utilities';
 
 export class BaseObject extends EventEmitter {
   static extend = function <T>(proto: any, stat?: any): T {

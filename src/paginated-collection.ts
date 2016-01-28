@@ -1,7 +1,7 @@
 
-import {EventEmitter} from 'eventsjs'
-import {ICollection, IModel} from './interfaces'
-import {CollectionOptions} from './collection'
+import {EventEmitter} from 'eventsjs/lib/events';
+import {ICollection, IModel} from './interfaces';
+import {CollectionOptions} from './collection';
 
 export interface PaginatedCollectionOptions<U extends IModel> extends CollectionOptions<U> {
 	

@@ -5,26 +5,32 @@ const gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	merge = require('merge2'),
 	sq = require('streamqueue'),
-	webpack = require('gulp-webpack');
-	
+	webpack = require('gulp-webpack'),
+	origWebpack = require('webpack'),
+  tsOrig = require('typescript'),
+  babel = require("gulp-babel");
+
 const project = typescript.createProject('tsconfig.json', {
-	 declaration: true,
-	 sortOutput: true,
+	//  declaration: true,
+	//  sortOutput: true,
 	 typescript: require('typescript')
 });
 	
 gulp.task('build', function () {
 	let result = project.src('src/**/*.ts')
-	.pipe(typescript(project))
+	.pipe(typescript(project));
 	
 	return merge([
-		result.js.pipe(gulp.dest('lib')),
-		result.dts.pipe(gulp.dest('lib'))
+		result.js
+      .pipe(gulp.dest('lib')),
+      //.pipe(babel()),
+		result.dts
+			.pipe(gulp.dest('lib'))
 	]);
 	
 })
 
-gulp.task('build:bundle', ['build'], function () {
+gulp.task('pack', ['build'], function () {
 	
 	return gulp.src('./lib/index.js')
 	.pipe(webpack({
@@ -36,7 +42,7 @@ gulp.task('build:bundle', ['build'], function () {
 		externals: {
 			'eventsjs': 'eventsjs'
 		}
-	}))
+	}, origWebpack))
 	.pipe(gulp.dest('dist'))
 	
 	/*let tsconfig = require(process.cwd() + '/tsconfig.json')
