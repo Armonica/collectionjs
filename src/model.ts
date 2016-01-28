@@ -5,7 +5,7 @@ import {uniqueId, equal} from 'utilities'
 import {has, extend} from 'utilities'
 
 
-export interface ModelOptions {
+  export interface ModelOptions {
     collection?: ICollection
   }
 
