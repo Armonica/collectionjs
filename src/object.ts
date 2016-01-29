@@ -1,4 +1,5 @@
 /// <reference path="../node_modules/utilities/utilities.d.ts" />
+/// <reference path="../node_modules/eventsjs/events.d.ts" />
 
 import {EventEmitter} from 'eventsjs/lib/events';
 import {inherits} from 'utilities';
