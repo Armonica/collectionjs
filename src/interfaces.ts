@@ -1,4 +1,7 @@
-import {IEventEmitter} from 'eventsjs';
+/// <reference path="../node_modules/utilities/utilities.d.ts" />
+/// <reference path="../node_modules/eventsjs/events.d.ts" />
+
+import {IEventEmitter} from 'eventsjs/lib/events';
 import {IPromise} from 'utilities';
 
 export interface ISerializable {
