@@ -25,6 +25,9 @@
       "./src/collection.ts",
       "./src/index.ts",
       "./src/object.ts",
+      "./src/persistence.ts",
+      "./src/rest-model.ts",
+      "./src/rest-collection.ts",
       "./src/paginated-collection.ts"
     ]
 }

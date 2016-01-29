@@ -239,7 +239,6 @@ export class NestedModel extends Model {
 				setNested(current, attr, val);
 			}
 			
-			//unset ? deleteNested(current, attr) : setNested(current, attr, val);
 			//</custom code>
 		}
 

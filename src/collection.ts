@@ -1,6 +1,6 @@
 /// <reference path="interfaces" />
 import {BaseObject} from './object'
-import {IModel,ICollection, Silenceable} from './interfaces'
+import {IModel,ICollection, Silenceable, ISerializable} from './interfaces'
 import {Model} from './model'
 import {extend} from 'utilities'
 import {sortBy, find, slice} from 'utilities'
@@ -32,15 +32,15 @@ export interface CollectionRemoveOptions extends Silenceable {
 
 export interface CollectionSortOptions extends Silenceable { }
 
-export interface CollectionCreateOptions {
-  add?: boolean
+export interface CollectionCreateOptions extends CollectionSetOptions {
+  
 }
 
 export interface CollectionResetOptions extends Silenceable {
   previousModels?: IModel[]
 }
 
-export class Collection<U extends IModel> extends BaseObject implements ICollection {
+export class Collection<U extends IModel> extends BaseObject implements ICollection, ISerializable {
   /**
    * The length of the collection
    * @property {Number} length
@@ -228,8 +228,7 @@ export class Collection<U extends IModel> extends BaseObject implements ICollect
 
   sort (options: CollectionSortOptions={}) {
     if (!this.comparator) throw new Error('Cannot sort a set without a comparator');
-
-
+    
     // Run sort based on type of `comparator`.
     if (typeof this.comparator === 'string' || this.comparator.length === 1) {
       this._models = this.sortBy((<any>this.comparator), this);

@@ -1,5 +1,5 @@
 import { BaseObject } from './object';
-import { IModel, ICollection, Silenceable } from './interfaces';
+import { IModel, ICollection, Silenceable, ISerializable } from './interfaces';
 export declare type SortFunction = <T>(a: T, b: T) => number;
 export interface CollectionOptions<U> {
     model?: new (attr: Object, options?: any) => U;
@@ -17,13 +17,12 @@ export interface CollectionRemoveOptions extends Silenceable {
 }
 export interface CollectionSortOptions extends Silenceable {
 }
-export interface CollectionCreateOptions {
-    add?: boolean;
+export interface CollectionCreateOptions extends CollectionSetOptions {
 }
 export interface CollectionResetOptions extends Silenceable {
     previousModels?: IModel[];
 }
-export declare class Collection<U extends IModel> extends BaseObject implements ICollection {
+export declare class Collection<U extends IModel> extends BaseObject implements ICollection, ISerializable {
     length: number;
     private _model;
     Model: new (attr: Object, options?: any) => U;
