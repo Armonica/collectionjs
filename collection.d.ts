@@ -2,7 +2,7 @@
 
 
 declare module "collection" {
-	import * as tmp from 'collectionjs/lib/index';
+	import * as tmp from 'collection/lib/index';
 	export = tmp;
 }
 
