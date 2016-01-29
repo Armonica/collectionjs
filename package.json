@@ -44,5 +44,8 @@
     "eventsjs": "git+https://github.com/Armonica/eventsjs.git",
     "utilities": "git+https://github.com/Armonica/utilitiesjs.git"
   },
+  "typescript": {
+    "definition": "collection.d.ts"
+  },
   "typings": "lib/index"
 }
